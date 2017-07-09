@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Main">
+
+    <EditText
+        android:id="@+id/search_field"
+        android:layout_width="331dp"
+        android:layout_height="42dp"
+        android:hint="@string/searchHint"
+        android:textStyle="italic"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="16dp" />
+
+    <Button
+        android:layout_width="331dp"
+        android:layout_height="54dp"
+        android:text="@string/searchButtonString"
+        android:onClick="searchButtonClicked"
+        android:id="@+id/searchByTitleButton"
+        app:layout_constraintLeft_toLeftOf="@+id/search_field"
+        app:layout_constraintTop_toBottomOf="@+id/search_field"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintRight_toRightOf="@+id/search_field"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginTop="24dp" />
+
+    <TextView
+        android:layout_width="328dp"
+        android:layout_height="98dp"
+        android:text="@string/welcomeMsg"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:id="@+id/welcomeTV"
+        app:layout_constraintLeft_toLeftOf="@+id/searchByTitleButton"
+        app:layout_constraintRight_toRightOf="@+id/searchByTitleButton"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/searchByTitleButton"
+        app:layout_constraintHorizontal_bias="1.0" />
+
+    <TextView
+        android:layout_width="327dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/rpHeaderTV"
+        android:text="@string/rentalPolicyHeader"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintRight_toRightOf="@+id/welcomeTV"
+        app:layout_constraintLeft_toLeftOf="@+id/welcomeTV"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeTV"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <TextView
+        android:text="@string/rentalPolicyBody"
+        android:textSize="18sp"
+        android:layout_width="327dp"
+        android:layout_height="126dp"
+        android:id="@+id/rpBodyTV"
+        app:layout_constraintLeft_toLeftOf="@+id/rpHeaderTV"
+        app:layout_constraintRight_toRightOf="@+id/rpHeaderTV"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/rpHeaderTV"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline"
+        app:layout_constraintGuide_begin="0dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:text=""
+        android:textStyle="italic"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/noResultsFlag"
+        app:layout_constraintTop_toBottomOf="@+id/search_field"
+        app:layout_constraintLeft_toLeftOf="@+id/search_field"
+        app:layout_constraintRight_toRightOf="@+id/search_field"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+
+</android.support.constraint.ConstraintLayout>

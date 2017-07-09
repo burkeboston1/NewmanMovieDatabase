@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Newman Movie Database</string>
+    <string name="searchHint">ex. \'Star Wars\'</string>
+    <string name="searchButtonString">Search</string>
+    <string name="welcomeMsg">Welcome!\n\nEnter the name of a movie in the search bar to find its
+        location on the shelves!</string>
+    <string name="rentalPolicyHeader">Newman Library DVD Rental Policy</string>
+    <string name="rentalPolicyBody">
+        - You can rent up to 3 DVDs at a time.\n- DVDs are due back 5 days after check-out.\n- There is a $1.00 charge for each day a DVD is overdue.
+    </string>
+    <string name="noResultsString">No results found.</string>
+    <string name="searchErrorString">Try "First Last" or "First Middle Last"</string>
+</resources>
+
+
+
+
+
+
+
