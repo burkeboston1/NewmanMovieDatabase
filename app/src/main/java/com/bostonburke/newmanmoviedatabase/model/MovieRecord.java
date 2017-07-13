@@ -1,4 +1,4 @@
-package com.bostonburke.newmanmoviedatabase;
+package com.bostonburke.newmanmoviedatabase.model;
 
 /**
  * Holds information about a movie.

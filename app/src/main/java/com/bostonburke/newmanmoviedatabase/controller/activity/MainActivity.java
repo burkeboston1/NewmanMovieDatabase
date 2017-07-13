@@ -1,4 +1,4 @@
-package com.bostonburke.newmanmoviedatabase;
+package com.bostonburke.newmanmoviedatabase.controller.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,10 +7,15 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.bostonburke.newmanmoviedatabase.model.DisplayResults;
+import com.bostonburke.newmanmoviedatabase.model.MRParcel;
+import com.bostonburke.newmanmoviedatabase.model.MovieTable;
+import com.bostonburke.newmanmoviedatabase.R;
+
 /**
  * View controller for activity_main.xml.
  */
-public class Main extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     // Attributes
     MovieTable table;

@@ -1,11 +1,9 @@
-package com.bostonburke.newmanmoviedatabase;
+package com.bostonburke.newmanmoviedatabase.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.text.method.MovementMethod;
 
 import java.util.ArrayList;
-import java.util.Vector;
 
 /**
  * Simply a Vector of MovieRecord objects. MRParcel must implement Parcelable

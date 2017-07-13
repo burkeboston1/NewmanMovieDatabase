@@ -1,4 +1,4 @@
-package com.bostonburke.newmanmoviedatabase;
+package com.bostonburke.newmanmoviedatabase.model;
 
 import android.content.Intent;
 import android.support.v4.app.NavUtils;
@@ -6,8 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.bostonburke.newmanmoviedatabase.R;
+
 import java.util.ArrayList;
-import java.util.Vector;
 
 /**
  * View controller for activity_display_results.xml.
