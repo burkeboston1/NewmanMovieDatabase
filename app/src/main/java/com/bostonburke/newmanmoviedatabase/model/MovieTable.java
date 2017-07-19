@@ -19,13 +19,13 @@ public class MovieTable {
      */
     public MovieTable() {
         movieTable = new ArrayList<MovieRecord>();
-        buildTable();
+        //buildTable();
     }
 
     /**
      * Searches the MovieTable for records like 'query'.
      */
-    public ArrayList<MovieRecord> searchFor(String query) {
+    /**public ArrayList<MovieRecord> searchFor(String query) {
         ArrayList<MovieRecord> results = new ArrayList<MovieRecord>();
         for (MovieRecord mr : movieTable) {
             if (mr.getTitle().toLowerCase().contains(query.toLowerCase())) {
@@ -39,20 +39,20 @@ public class MovieTable {
             }
         }
         return results;
-    }
+    }*/
 
     /**
      * Get the most recent .csv file of DVD information.
      */
-    private File getCurrentCSVFile() {
+    /**private File getCurrentCSVFile() {
         // TODO: implement network
         return new File("C:\\Users\\Boston\\AndroidStudioProjects\\NewmanMovieDatabase\\app\\src\\main\\assets\\dvd_info.txt");
-    }
+    }*/
 
     /**
      *
      */
-    private void buildTable(){
+    /**private void buildTable(){
         try {
             BufferedReader reader = new BufferedReader(new FileReader(getCurrentCSVFile()));
             String line;
@@ -70,5 +70,5 @@ public class MovieTable {
         catch (java.io.IOException e) {
             System.out.println("MSG: End of file");
         }
-    }
+    }*/
 }

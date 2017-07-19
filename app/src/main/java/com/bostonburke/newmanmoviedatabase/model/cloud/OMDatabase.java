@@ -13,12 +13,14 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 /**
- * Class
+ * Class containing functions to query the OMDb movie database.
+ *
+ * @author Tom Evans
  */
 public class OMDatabase
 {
     /** Holds the client entity that sends/receives requests */
-    private OkHttpClient mClient;
+    private static OkHttpClient mClient;
 
     /**
      * Method to get all data for a movie by its title.
@@ -26,7 +28,7 @@ public class OMDatabase
      * @param movieTitle - The title of the movie.
      * @return - The data associated with the given movie title.
      */
-    public JSONObject getMovieData(String movieTitle)
+    public static JSONObject getMovieData(String movieTitle)
     {
         MovieDataHandler handler = new MovieDataHandler();
         try{
@@ -39,7 +41,7 @@ public class OMDatabase
         return null;
     }
 
-    private class MovieDataHandler extends AsyncTask<String, Void, JSONObject>
+    private static class MovieDataHandler extends AsyncTask<String, Void, JSONObject>
     {
         @Override
         protected JSONObject doInBackground(String... strings)
