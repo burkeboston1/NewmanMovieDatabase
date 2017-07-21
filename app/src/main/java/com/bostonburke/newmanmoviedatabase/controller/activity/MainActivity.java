@@ -6,9 +6,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.bostonburke.newmanmoviedatabase.controller.adapter.ViewPagerAdapter;
@@ -27,6 +29,8 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     private Toolbar mToolbar;
     private NoSwipeViewPager mViewPager;
     private TabLayout mTabLayout;
+    private SearchView.SearchAutoComplete mSearchView;
+    private ImageButton mSearchButton;
 
 
     // Attributes
@@ -40,6 +44,9 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         setContentView(R.layout.activity_main);
 
         setupToolBar();
+        setupNoSwipeViewPager();
+        setupTabLayout();
+
         //table = new MovieTable();
 
         // Get the search field
@@ -53,10 +60,16 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     {
         mToolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
+
+        //Prevent the name of the app from being shown on the toolbar
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        mSearchView = (SearchView.SearchAutoComplete)findViewById(R.id.search_view);
+        mSearchButton = (ImageButton)findViewById(R.id.search_button);
     }
 
     /**
-     *
+     * Method to set up the custom viewpager view.
      */
     private void setupNoSwipeViewPager()
     {
@@ -72,11 +85,20 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
             adapter.addFragment(rand, "Random");
 
             BrowseFragment thirdExample = new BrowseFragment();
-            adapter.addFragment(aToZ, "Example Tab");
+            adapter.addFragment(thirdExample, "Example Tab");
 
             mViewPager.setAdapter(adapter);
             mViewPager.addOnPageChangeListener(this);
         }
+    }
+
+    /**
+     * Method to set up the tab layout view.
+     */
+    private void setupTabLayout()
+    {
+        mTabLayout = (TabLayout)findViewById(R.id.tab_layout);
+        mTabLayout.setupWithViewPager(mViewPager);
     }
 
     /**

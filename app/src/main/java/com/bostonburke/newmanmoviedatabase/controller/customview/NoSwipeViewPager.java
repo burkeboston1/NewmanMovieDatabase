@@ -2,6 +2,7 @@ package com.bostonburke.newmanmoviedatabase.controller.customview;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;
+import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.Scroller;
@@ -23,6 +24,19 @@ public class NoSwipeViewPager extends ViewPager
     public NoSwipeViewPager(Context context)
     {
         super(context);
+        setScroller();
+    }
+
+    /**
+     * Defualt constructor.
+     *
+     * @param context - Context in which the view wxists.
+     * @param attrs - The set of attributes for the custom view.
+     */
+    public NoSwipeViewPager(Context context, AttributeSet attrs)
+    {
+        super(context, attrs);
+        setScroller();
     }
 
     /**
