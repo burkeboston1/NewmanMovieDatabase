@@ -17,7 +17,7 @@ import okhttp3.Response;
  *
  * @author Tom Evans
  */
-public class OMDatabase
+public class OMDb
 {
     /** Holds the client entity that sends/receives requests */
     private static OkHttpClient mClient;
