@@ -16,7 +16,6 @@ import android.widget.TextView;
 import com.bostonburke.newmanmoviedatabase.controller.adapter.ViewPagerAdapter;
 import com.bostonburke.newmanmoviedatabase.controller.customview.NoSwipeViewPager;
 import com.bostonburke.newmanmoviedatabase.controller.fragment.BrowseFragment;
-import com.bostonburke.newmanmoviedatabase.model.DisplayResults;
 import com.bostonburke.newmanmoviedatabase.model.MRParcel;
 import com.bostonburke.newmanmoviedatabase.model.MovieTable;
 import com.bostonburke.newmanmoviedatabase.R;

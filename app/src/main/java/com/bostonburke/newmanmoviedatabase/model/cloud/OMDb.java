@@ -13,14 +13,15 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 /**
- * Class containing functions to query the OMDb movie database.
- *
- * @author Tom Evans
+ * Class
  */
 public class OMDb
 {
     /** Holds the client entity that sends/receives requests */
-    private static OkHttpClient mClient;
+    private OkHttpClient mClient;
+
+    /* API Key for OMDb */
+    private String apiKey = "96ad6a43";
 
     /**
      * Method to get all data for a movie by its title.
@@ -28,11 +29,12 @@ public class OMDb
      * @param movieTitle - The title of the movie.
      * @return - The data associated with the given movie title.
      */
-    public static JSONObject getMovieData(String movieTitle)
+    public JSONObject getMovieDataByTitle(String movieTitle)
     {
         MovieDataHandler handler = new MovieDataHandler();
+        String titleParam = "t=\"" + movieTitle + "\"";
         try{
-            JSONObject movieData = handler.execute(movieTitle).get();
+            JSONObject movieData = handler.execute(titleParam).get();
             return movieData;
         }catch (ExecutionException | InterruptedException e){
             e.printStackTrace();
@@ -41,12 +43,70 @@ public class OMDb
         return null;
     }
 
-    private static class MovieDataHandler extends AsyncTask<String, Void, JSONObject>
+    /**
+     * Method to get all data for a movie by its id
+     *
+     * @param movieId - The id of the movie.
+     * @return - The data associated with the given movie title.
+     */
+    public JSONObject getMovieDataById(String movieId)
+    {
+        MovieDataHandler handler = new MovieDataHandler();
+        String titleParam = "i=\"" + movieId + "\"";
+        try{
+            JSONObject movieData = handler.execute(titleParam).get();
+            return movieData;
+        }catch (ExecutionException | InterruptedException e){
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    /**
+     * Searches OMDb for all records matching "title".
+     *
+     * @param movieTitle - the title of the movie
+     * @return - JSON object of results
+     */
+    public JSONObject getMoviesWithTitle(String movieTitle) {
+        MovieDataHandler handler = new MovieDataHandler();
+        String titleParam = "s=\"" + movieTitle + "\"";
+        try{
+            JSONObject movieData = handler.execute(titleParam).get();
+            return movieData;
+        }catch (ExecutionException | InterruptedException e){
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    /**
+     * Searches OMDb for all records matching year "year".
+     *
+     * @param movieYear - the year the movie was published
+     * @return - JSON object of results
+     */
+    public JSONObject getMoviesFromYear(String movieYear) {
+        MovieDataHandler handler = new MovieDataHandler();
+        String titleParam = "y=\"" + movieYear + "\"";
+        try{
+            JSONObject movieData = handler.execute(titleParam).get();
+            return movieData;
+        }catch (ExecutionException | InterruptedException e){
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    private class MovieDataHandler extends AsyncTask<String, Void, JSONObject>
     {
         @Override
         protected JSONObject doInBackground(String... strings)
         {
-            String endpoint = "http://www.omdbapi.com/?t" + strings[0];
+            String endpoint = "http://www.omdbapi.com/?apiKey=" + apiKey + strings[0];
             Request.Builder builder = new Request.Builder();
             builder.url(endpoint);
             builder.get();
