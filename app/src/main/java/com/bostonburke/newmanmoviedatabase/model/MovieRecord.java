@@ -4,6 +4,9 @@ import com.bostonburke.newmanmoviedatabase.model.cloud.OMDb;
 
 import org.json.JSONObject;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 /**
  * Holds data about a movie in Newman library.
  *
@@ -17,6 +20,8 @@ public class MovieRecord {
     private String AddAuthor;
     private String Subject;
 
+    private ArrayList<String> keywords;
+
     // ---------------------------------------------------------------------------------------------
     // Constructors
 
@@ -27,11 +32,14 @@ public class MovieRecord {
      * @param addAuthor  extra information about actors, etc.
      * @param subject    keywords about the movie's content
      */
-    public MovieRecord(String callNumber, String title, String addAuthor, String subject ){
+    public MovieRecord(String callNumber, String title, String addAuthor, String subject){
         this.CallNumber = callNumber;
         this.Title = title;
         this.AddAuthor = addAuthor;
         this.Subject = subject;
+
+        String target = this.Title + " " + this.AddAuthor + " " + this.Subject;
+        keywords = getKeywords(target);
     }
 
     //----------------------------------------------------------------------------------------------
@@ -47,9 +55,16 @@ public class MovieRecord {
 
 
     public boolean contains(String s) {
-        s = s.toLowerCase();
-        return CallNumber.toLowerCase().contains(s) || Title.toLowerCase().contains(s)
-                || AddAuthor.toLowerCase().contains(s) || Subject.toLowerCase().contains(s);
+        ArrayList<String> kws = getKeywords(s);
+        for (String kw : kws) {
+            if (!keywords.contains(kw)) {
+                return false;
+            }
+        }
+        return true;
+//        s = s.toLowerCase();
+//        return CallNumber.toLowerCase().contains(s) || Title.toLowerCase().contains(s)
+//                || AddAuthor.toLowerCase().contains(s) || Subject.toLowerCase().contains(s);
     }
 
     public JSONObject getOMDb(OMDb omDb) {
@@ -61,9 +76,6 @@ public class MovieRecord {
     public String getTitle(){
         return Title;
     }
-    public String getAddAuthor(){ return AddAuthor; }
-    public String getSubject(){ return Subject; }
-
 
     /* Equals */
     @Override
@@ -83,7 +95,17 @@ public class MovieRecord {
      * Trims the movie record's title of trailing, unnecessary information.
      */
     private static String trimTitle(String before) {
-        return before.split("\\[v|\\(M")[0];
+        return before.split("\\[v|\\(M|/")[0];
     }
 
+    private ArrayList<String> getKeywords(String target) {
+        ArrayList<String> kws = new ArrayList<>();
+        String[] words = target.split("\\W"); // strip non-word characters
+        for (String word : words) {
+            if (!word.isEmpty()) {
+                kws.add(word.toLowerCase());
+            }
+        }
+        return kws;
+    }
 }
