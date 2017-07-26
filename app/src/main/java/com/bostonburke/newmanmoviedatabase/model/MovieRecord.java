@@ -1,9 +1,16 @@
 package com.bostonburke.newmanmoviedatabase.model;
 
+import com.bostonburke.newmanmoviedatabase.model.cloud.OMDb;
+
+import org.json.JSONObject;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 /**
- * Holds information about a movie.
+ * Holds data about a movie in Newman library.
  *
- * Created by Boston on 9/25/2016.
+ * Boston Burke, 2017
  */
 public class MovieRecord {
 
@@ -12,6 +19,8 @@ public class MovieRecord {
     private String Title;
     private String AddAuthor;
     private String Subject;
+
+    private ArrayList<String> keywords;
 
     // ---------------------------------------------------------------------------------------------
     // Constructors
@@ -23,59 +32,52 @@ public class MovieRecord {
      * @param addAuthor  extra information about actors, etc.
      * @param subject    keywords about the movie's content
      */
-    public MovieRecord( String callNumber, String title, String addAuthor, String subject ){
+    public MovieRecord(String callNumber, String title, String addAuthor, String subject){
         this.CallNumber = callNumber;
         this.Title = title;
         this.AddAuthor = addAuthor;
         this.Subject = subject;
+
+        String target = this.Title + " " + this.AddAuthor + " " + this.Subject;
+        keywords = getKeywords(target);
     }
 
     //----------------------------------------------------------------------------------------------
     // Public Methods
 
-    /**
-     * Gets the location specifier of this MovieRecord object
-     * @return call number
-     */
-    public String getCallNumber(){
-        return CallNumber;
-    }
-
     public static MovieRecord parseMovieRecord(String string) {
         String[] fields = string.split("\t");
         if (fields.length == 9) {
-            return new MovieRecord(fields[0], fields[1], fields[3], fields[8]);
+            return new MovieRecord(fields[0], trimTitle(fields[1]), fields[3], fields[8]);
         }
         return null;
     }
 
-    /**
-     * Gets the title of this MovieRecord object
-     * @return title
-     */
+
+    public boolean contains(String s) {
+        ArrayList<String> kws = getKeywords(s);
+        for (String kw : kws) {
+            if (!keywords.contains(kw)) {
+                return false;
+            }
+        }
+        return true;
+//        s = s.toLowerCase();
+//        return CallNumber.toLowerCase().contains(s) || Title.toLowerCase().contains(s)
+//                || AddAuthor.toLowerCase().contains(s) || Subject.toLowerCase().contains(s);
+    }
+
+    public JSONObject getOMDb(OMDb omDb) {
+        return omDb.getMovieDataByTitle(Title);
+    }
+
+    /* Getters */
+    public String getCallNumber(){ return CallNumber; }
     public String getTitle(){
         return Title;
     }
 
-    /**
-     * Gets the AddAuthor information about this movie, i.e. actors, firms, etc.
-     * @return addAuthor
-     */
-    public String getAddAuthor(){ return AddAuthor; }
-
-    /**
-     * Gets the Subject information about this movie, i.e. keywords about the
-     * movie's content.
-     * @return subject
-     */
-    public String getSubject(){ return Subject; }
-
-    /**
-     * Assesses the equality of two MovieRecords. Two are equal if their CallNumbers
-     * are the same
-     * @param other MovieRecord object other
-     * @return true if equal, false otherwise
-     */
+    /* Equals */
     @Override
     public boolean equals(Object other){
         if ( other != null ){
@@ -85,5 +87,25 @@ public class MovieRecord {
             }
         }
         return false;
+    }
+
+    //----------------------------------------------------------------------------------------------
+    // Private Methods
+    /**
+     * Trims the movie record's title of trailing, unnecessary information.
+     */
+    private static String trimTitle(String before) {
+        return before.split("\\[v|\\(M|/")[0];
+    }
+
+    private ArrayList<String> getKeywords(String target) {
+        ArrayList<String> kws = new ArrayList<>();
+        String[] words = target.split("\\W"); // strip non-word characters
+        for (String word : words) {
+            if (!word.isEmpty()) {
+                kws.add(word.toLowerCase());
+            }
+        }
+        return kws;
     }
 }

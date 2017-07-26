@@ -11,6 +11,13 @@ import android.widget.TextView;
 import com.bostonburke.newmanmoviedatabase.R;
 import com.bostonburke.newmanmoviedatabase.controller.activity.MovieDetailActivity;
 import com.bostonburke.newmanmoviedatabase.model.cloud.OMDb;
+<<<<<<< HEAD
+=======
+
+import org.json.JSONObject;
+
+import java.io.Serializable;
+>>>>>>> ff7d6ba17c1fb1bdf1d2b0d538e2d4c24ac815c9
 import java.util.List;
 
 /**
@@ -23,6 +30,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private final TypedValue mTypedValue = new TypedValue();
     private int mBackgroundResID;
     private List<String> mValues;
+    private OMDb omdb = new OMDb();
 
     public static class ViewHolder extends RecyclerView.ViewHolder
     {
@@ -72,7 +80,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
                 //Pass movie data JSON as string to new activity, re-create as JSONObject in receiving activity
                 Intent intent = new Intent(ctxt, MovieDetailActivity.class);
+<<<<<<< HEAD
                 intent.putExtra("MOVIE_DATA", OMDb.getMovieData(vh.mMovieTitle.getText().toString()).toString());
+=======
+                intent.putExtra("MOVIE_DATA", omdb.getMovieDataByTitle(vh.mMovieTitle.getText().toString()).toString());
+>>>>>>> ff7d6ba17c1fb1bdf1d2b0d538e2d4c24ac815c9
                 ctxt.startActivity(intent);
             }
         });

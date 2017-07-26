@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 
 /**
- * Current database of movies available to rent from Newman Library.
+ * Most recent dump of Newman's database.
  *
  * Created by Boston on 7/9/2017.
  */
@@ -19,42 +19,35 @@ public class MovieTable {
      */
     public MovieTable() {
         movieTable = new ArrayList<MovieRecord>();
-        //buildTable();
+        buildTable();
     }
 
     /**
      * Searches the MovieTable for records like 'query'.
      */
-    /**public ArrayList<MovieRecord> searchFor(String query) {
+    public ArrayList<MovieRecord> lookup(String query) {
         ArrayList<MovieRecord> results = new ArrayList<MovieRecord>();
         for (MovieRecord mr : movieTable) {
-            if (mr.getTitle().toLowerCase().contains(query.toLowerCase())) {
-                results.add(mr);
-            }
-            else if (mr.getSubject().contains(query)) {
-                results.add(mr);
-            }
-            else if (mr.getAddAuthor().contains(query)) {
+            if (mr.contains(query)) {
                 results.add(mr);
             }
         }
         return results;
-    }*/
+    }
 
     /**
-     * Get the most recent .csv file of DVD information.
+     * Gets Newman's latest database dump.
      */
-    /**private File getCurrentCSVFile() {
-        // TODO: implement network
+    private File getCurrentDump() {
         return new File("C:\\Users\\Boston\\AndroidStudioProjects\\NewmanMovieDatabase\\app\\src\\main\\assets\\dvd_info.txt");
-    }*/
+    }
 
     /**
-     *
+     *  Parse the lines of the file into MovieRecord objects.
      */
-    /**private void buildTable(){
+    private void buildTable(){
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(getCurrentCSVFile()));
+            BufferedReader reader = new BufferedReader(new FileReader(getCurrentDump()));
             String line;
             reader.readLine(); // skip header
             while ((line = reader.readLine()) != null) {
@@ -65,10 +58,10 @@ public class MovieTable {
             }
         }
         catch (java.io.FileNotFoundException e) {
-            System.out.println("ERROR: File not found");
+            System.out.println("ERROR: dump file not found");
         }
         catch (java.io.IOException e) {
-            System.out.println("MSG: End of file");
+            // end of file
         }
-    }*/
+    }
 }
