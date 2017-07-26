@@ -1,23 +1,16 @@
 package com.bostonburke.newmanmoviedatabase.controller.adapter;
 
-
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import com.bostonburke.newmanmoviedatabase.R;
 import com.bostonburke.newmanmoviedatabase.controller.activity.MovieDetailActivity;
-import com.bostonburke.newmanmoviedatabase.model.cloud.OMDatabase;
-
-import org.json.JSONObject;
-
-import java.io.Serializable;
+import com.bostonburke.newmanmoviedatabase.model.cloud.OMDb;
 import java.util.List;
 
 /**
@@ -79,7 +72,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
                 //Pass movie data JSON as string to new activity, re-create as JSONObject in receiving activity
                 Intent intent = new Intent(ctxt, MovieDetailActivity.class);
-                intent.putExtra("MOVIE_DATA", OMDatabase.getMovieData(vh.mMovieTitle.getText().toString()).toString());
+                intent.putExtra("MOVIE_DATA", OMDb.getMovieData(vh.mMovieTitle.getText().toString()).toString());
                 ctxt.startActivity(intent);
             }
         });
