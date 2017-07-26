@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     private Toolbar mToolbar;
     private NoSwipeViewPager mViewPager;
     private TabLayout mTabLayout;
-    private SearchView.SearchAutoComplete mSearchView;
+    private AutoCompleteTextView mSearchView;
     private ImageButton mSearchButton;
 
 
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         //Prevent the name of the app from being shown on the toolbar
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        mSearchView = (SearchView.SearchAutoComplete)findViewById(R.id.search_view);
+        mSearchView = (AutoCompleteTextView) findViewById(R.id.search_view);
         mSearchButton = (ImageButton)findViewById(R.id.search_button);
     }
 
@@ -94,30 +95,6 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         mTabLayout = (TabLayout)findViewById(R.id.tab_layout);
         mTabLayout.setupWithViewPager(mViewPager);
     }
-
-    /**
-     * Called when the titleSearch button is clicked
-     *
-     * @param view the view that was clicked
-     */
-    /**public void searchButtonClicked(View view) {
-        String query = editText.getText().toString();
-
-        // Check for empty string
-        if( !query.isEmpty() ) {
-            MRParcel results = new MRParcel(table.searchFor(query));
-
-            // If the results set was empty, let the user know in
-            // activity_main
-            if (results.get().isEmpty()) {
-                TextView nrFlag = (TextView) findViewById(R.id.noResultsFlag);
-                nrFlag.setVisibility(View.VISIBLE);
-            } else {
-                Intent intent = new Intent(this, DisplayResults.class);
-                intent.putExtra("results", results);
-            }
-        }
-    }*/
 
     @Override
     public void onPageSelected(int position)

@@ -32,12 +32,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <android.support.v7.widget.SearchView.SearchAutoComplete
-                    class="@+id/search_view"
+                <AutoCompleteTextView
+                    android:id="@+id/search_view"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
-                    android:hint="Search "/>
+                    android:hint="Search"/>
 
                 <ImageButton
                     android:id="@+id/search_button"
