@@ -1,4 +1,4 @@
-package com.bostonburke.newmanmoviedatabase.model;
+package com.newman.moviedatabase.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

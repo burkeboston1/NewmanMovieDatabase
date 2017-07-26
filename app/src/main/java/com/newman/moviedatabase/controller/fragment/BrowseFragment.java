@@ -1,4 +1,4 @@
-package com.bostonburke.newmanmoviedatabase.controller.fragment;
+package com.newman.moviedatabase.controller.fragment;
 
 
 import android.os.Bundle;
@@ -10,8 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.bostonburke.newmanmoviedatabase.R;
-import com.bostonburke.newmanmoviedatabase.controller.adapter.RecyclerViewAdapter;
+import com.newman.moviedatabase.R;
+import com.newman.moviedatabase.controller.adapter.RecyclerViewAdapter;
 
 import android.support.v7.widget.DividerItemDecoration;
 import java.util.ArrayList;

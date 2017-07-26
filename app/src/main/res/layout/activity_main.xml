@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".controller.activity.MainActivity">
 
-    <com.bostonburke.newmanmoviedatabase.controller.customview.NoSwipeViewPager
+    <com.newman.moviedatabase.controller.customview.NoSwipeViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

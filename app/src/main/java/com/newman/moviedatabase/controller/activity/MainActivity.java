@@ -1,24 +1,19 @@
-package com.bostonburke.newmanmoviedatabase.controller.activity;
+package com.newman.moviedatabase.controller.activity;
 
-import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
-import com.bostonburke.newmanmoviedatabase.controller.adapter.ViewPagerAdapter;
-import com.bostonburke.newmanmoviedatabase.controller.customview.NoSwipeViewPager;
-import com.bostonburke.newmanmoviedatabase.controller.fragment.BrowseFragment;
-import com.bostonburke.newmanmoviedatabase.model.MRParcel;
-import com.bostonburke.newmanmoviedatabase.model.MovieTable;
-import com.bostonburke.newmanmoviedatabase.R;
+import com.newman.moviedatabase.controller.adapter.ViewPagerAdapter;
+import com.newman.moviedatabase.controller.customview.NoSwipeViewPager;
+import com.newman.moviedatabase.controller.fragment.BrowseFragment;
+import com.newman.moviedatabase.model.MovieTable;
+import com.newman.moviedatabase.R;
 
 /**
  * View controller for activity_main.xml.

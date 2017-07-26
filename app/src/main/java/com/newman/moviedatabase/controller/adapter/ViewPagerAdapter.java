@@ -1,4 +1,4 @@
-package com.bostonburke.newmanmoviedatabase.controller.adapter;
+package com.newman.moviedatabase.controller.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

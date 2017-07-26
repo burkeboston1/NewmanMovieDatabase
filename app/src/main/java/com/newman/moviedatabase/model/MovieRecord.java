@@ -1,10 +1,7 @@
-package com.bostonburke.newmanmoviedatabase.model;
+package com.newman.moviedatabase.model;
 
-import com.bostonburke.newmanmoviedatabase.model.cloud.OMDb;
-
+import com.newman.moviedatabase.model.cloud.OMDb;
 import org.json.JSONObject;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**

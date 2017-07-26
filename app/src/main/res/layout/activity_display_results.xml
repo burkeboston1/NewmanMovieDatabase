@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/activity_display_results"
-    tools:context="com.bostonburke.newmanmoviedatabase.model.DisplayResults">
+    tools:context="com.newman.moviedatabase.model.DisplayResults">
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"

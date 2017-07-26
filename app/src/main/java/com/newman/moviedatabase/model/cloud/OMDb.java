@@ -1,4 +1,4 @@
-package com.bostonburke.newmanmoviedatabase.model.cloud;
+package com.newman.moviedatabase.model.cloud;
 
 import android.os.AsyncTask;
 

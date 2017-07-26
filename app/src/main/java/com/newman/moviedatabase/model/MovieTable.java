@@ -1,4 +1,4 @@
-package com.bostonburke.newmanmoviedatabase.model;
+package com.newman.moviedatabase.model;
 
 import java.io.BufferedReader;
 import java.io.File;

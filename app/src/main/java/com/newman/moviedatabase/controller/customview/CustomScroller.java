@@ -1,4 +1,4 @@
-package com.bostonburke.newmanmoviedatabase.controller.customview;
+package com.newman.moviedatabase.controller.customview;
 
 import android.content.Context;
 import android.widget.Scroller;

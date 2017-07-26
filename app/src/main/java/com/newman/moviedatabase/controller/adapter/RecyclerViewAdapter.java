@@ -1,4 +1,4 @@
-package com.bostonburke.newmanmoviedatabase.controller.adapter;
+package com.newman.moviedatabase.controller.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,16 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import com.bostonburke.newmanmoviedatabase.R;
-import com.bostonburke.newmanmoviedatabase.controller.activity.MovieDetailActivity;
-import com.bostonburke.newmanmoviedatabase.model.cloud.OMDb;
-<<<<<<< HEAD
-=======
-
-import org.json.JSONObject;
-
-import java.io.Serializable;
->>>>>>> ff7d6ba17c1fb1bdf1d2b0d538e2d4c24ac815c9
+import com.newman.moviedatabase.R;
+import com.newman.moviedatabase.controller.activity.MovieDetailActivity;
+import com.newman.moviedatabase.model.cloud.OMDb;
 import java.util.List;
 
 /**
@@ -80,11 +73,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
                 //Pass movie data JSON as string to new activity, re-create as JSONObject in receiving activity
                 Intent intent = new Intent(ctxt, MovieDetailActivity.class);
-<<<<<<< HEAD
-                intent.putExtra("MOVIE_DATA", OMDb.getMovieData(vh.mMovieTitle.getText().toString()).toString());
-=======
                 intent.putExtra("MOVIE_DATA", omdb.getMovieDataByTitle(vh.mMovieTitle.getText().toString()).toString());
->>>>>>> ff7d6ba17c1fb1bdf1d2b0d538e2d4c24ac815c9
                 ctxt.startActivity(intent);
             }
         });

@@ -1,9 +1,9 @@
-package com.bostonburke.newmanmoviedatabase.controller.activity;
+package com.newman.moviedatabase.controller.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.bostonburke.newmanmoviedatabase.R;
+import com.newman.moviedatabase.R;
 
 public class MovieDetailActivity extends AppCompatActivity {
 
