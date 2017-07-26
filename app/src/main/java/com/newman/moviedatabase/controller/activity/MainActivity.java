@@ -17,7 +17,10 @@ import com.newman.moviedatabase.model.MovieTable;
 import com.newman.moviedatabase.R;
 
 /**
- * View controller for activity_main.xml.
+ * Class controls main activity of application for browsing the movie database listings.
+ *
+ * @author Tom Evans
+ * @author Boston Burke
  */
 public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener
 {

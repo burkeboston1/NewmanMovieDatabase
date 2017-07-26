@@ -29,13 +29,13 @@ public class OMDb
      * @param movieTitle - The title of the movie.
      * @return - The data associated with the given movie title.
      */
-    public JSONObject getMovieDataByTitle(String movieTitle)
+    public String getMovieDataByTitle(String movieTitle)
     {
         MovieDataHandler handler = new MovieDataHandler();
         String titleParam = "t=\"" + movieTitle + "\"";
         try{
             JSONObject movieData = handler.execute(titleParam).get();
-            return movieData;
+            return movieData.toString();
         }catch (ExecutionException | InterruptedException e){
             e.printStackTrace();
         }

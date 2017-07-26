@@ -23,7 +23,7 @@ import java.util.Arrays;
 public class BrowseFragment extends Fragment
 {
     final String[] strs = {
-            "Movie Title #1", "Movie Title #2", "Movie Title #3", "Movie Title #4", "Movie Title #5", "Movie Title #6", "Movie Title #7", "Movie Title #8", "Movie Title #9", "Movie Title #10",
+            "The Departed", "Movie Title #2", "Movie Title #3", "The Departed", "Movie Title #5", "Movie Title #6", "Movie Title #7", "Movie Title #8", "Movie Title #9", "Movie Title #10",
             "Movie Title #11", "Movie Title #12", "Movie Title #13", "Movie Title #14", "Movie Title #15", "Movie Title #16", "Movie Title #17", "Movie Title #18", "Movie Title #19", "Movie Title #20",
             "Movie Title #21", "Movie Title #22", "Movie Title #23", "Movie Title #24", "Movie Title #25", "Movie Title #26", "Movie Title #27", "Movie Title #28", "Movie Title #29", "Movie Title #30",
             "Movie Title #31", "Movie Title #32", "Movie Title #33", "Movie Title #34", "Movie Title #35", "Movie Title #36", "Movie Title #37", "Movie Title #38", "Movie Title #39", "Movie Title #40",

@@ -7,4 +7,11 @@
     android:layout_height="match_parent"
     tools:context="com.newman.moviedatabase.controller.activity.MovieDetailActivity">
 
+    <TextView
+        android:id="@+id/simple_text"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        tools:text="Intent passed here"/>
+
 </android.support.constraint.ConstraintLayout>

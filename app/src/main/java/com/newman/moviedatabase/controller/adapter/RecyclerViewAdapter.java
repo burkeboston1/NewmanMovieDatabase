@@ -69,12 +69,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             @Override
             public void onClick(View v)
             {
-                Context ctxt = v.getContext();
+                Context context = v.getContext();
 
                 //Pass movie data JSON as string to new activity, re-create as JSONObject in receiving activity
-                Intent intent = new Intent(ctxt, MovieDetailActivity.class);
+                Intent intent = new Intent(context, MovieDetailActivity.class);
                 intent.putExtra("MOVIE_DATA", omdb.getMovieDataByTitle(vh.mMovieTitle.getText().toString()).toString());
-                ctxt.startActivity(intent);
+                context.startActivity(intent);
             }
         });
     }

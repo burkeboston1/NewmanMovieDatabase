@@ -64,7 +64,7 @@ public class MovieRecord {
 //                || AddAuthor.toLowerCase().contains(s) || Subject.toLowerCase().contains(s);
     }
 
-    public JSONObject getOMDb(OMDb omDb) {
+    public String getOMDb(OMDb omDb) {
         return omDb.getMovieDataByTitle(Title);
     }
 
