@@ -23,9 +23,9 @@ import java.util.Arrays;
 public class BrowseFragment extends Fragment
 {
     final String[] strs = {
-            "The Departed", "Movie Title #2", "Movie Title #3", "The Departed", "Movie Title #5", "Movie Title #6", "Movie Title #7", "Movie Title #8", "Movie Title #9", "Movie Title #10",
-            "Movie Title #11", "Movie Title #12", "Movie Title #13", "Movie Title #14", "Movie Title #15", "Movie Title #16", "Movie Title #17", "Movie Title #18", "Movie Title #19", "Movie Title #20",
-            "Movie Title #21", "Movie Title #22", "Movie Title #23", "Movie Title #24", "Movie Title #25", "Movie Title #26", "Movie Title #27", "Movie Title #28", "Movie Title #29", "Movie Title #30",
+            "The Departed", "Scary Movie 3", "Metropolis", "12 Angry Men", "Inception", "Se7en", "Toy Story", "Whiplash", "The Matrix", "The Shining",
+            "Harry Potter and the Deathly Hallows: Part 2", "Movie Title #12", "Movie Title #13", "Movie Title #14", "Movie Title #15", "Movie Title #16", "Movie Title #17", "Movie Title #18", "Movie Title #19", "Movie Title #20",
+            "Twelve Monkeys", "Movie Title #22", "Movie Title #23", "Movie Title #24", "Movie Title #25", "Movie Title #26", "Movie Title #27", "Movie Title #28", "Movie Title #29", "Movie Title #30",
             "Movie Title #31", "Movie Title #32", "Movie Title #33", "Movie Title #34", "Movie Title #35", "Movie Title #36", "Movie Title #37", "Movie Title #38", "Movie Title #39", "Movie Title #40",
             "Movie Title #41", "Movie Title #42", "Movie Title #43", "Movie Title #44", "Movie Title #45", "Movie Title #46", "Movie Title #47", "Movie Title #48", "Movie Title #49", "Movie Title #50",
             "Movie Title #51", "Movie Title #52", "Movie Title #53", "Movie Title #54", "Movie Title #55", "Movie Title #56", "Movie Title #57", "Movie Title #58", "Movie Title #59", "Movie Title #60",

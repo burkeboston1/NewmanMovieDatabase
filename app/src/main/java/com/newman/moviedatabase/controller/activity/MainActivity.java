@@ -1,14 +1,23 @@
 package com.newman.moviedatabase.controller.activity;
 
+import android.content.Context;
+import android.hardware.input.InputManager;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.newman.moviedatabase.controller.adapter.ViewPagerAdapter;
 import com.newman.moviedatabase.controller.customview.NoSwipeViewPager;
@@ -63,8 +72,68 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         mSearchView = (AutoCompleteTextView) findViewById(R.id.search_view);
+        mSearchView.setOnEditorActionListener(hideOnDone);
+        mSearchView.setOnItemClickListener(hideOnSelection);
+
         mSearchButton = (ImageButton)findViewById(R.id.search_button);
     }
+
+    /**
+     * Listener hides keyboard when selection is made in the suggestions dropdown.
+     */
+    private AdapterView.OnItemClickListener hideOnSelection = new AdapterView.OnItemClickListener()
+    {
+        /**
+         * Method hides the keyboard when selection is made in the suggestions dropdown.
+         *
+         * @param parent - The parent view containing the searchview.
+         * @param view - The textview mSearchView.
+         * @param position - The index of the suggestion in the menu that was selected.
+         * @param id
+         */
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+        {
+            View v = getCurrentFocus();
+            if (v != null)
+            {
+                InputMethodManager inputManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputManager.hideSoftInputFromWindow(v.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+                Log.i("TAG", "Selection made");
+            }
+
+            /*
+             * TODO: Start activity for the item that was selected by getting the text (movie title) at menu index 'position'
+             *       and passing it in as an argument for the new activity transition. Transition starts new MovieDetainActivity
+             *       on main UI thread while background thread queries OMDb by the title for the data that will be loaded into the
+             *       newly transitioned-to activity.
+             */
+        }
+    };
+
+    /**
+     * Listener hides keyboard when enter/done is pressed on keyboard.
+     */
+    private TextView.OnEditorActionListener hideOnDone = new TextView.OnEditorActionListener()
+    {
+        /**
+         * Method hides keyboard when enter/done is pressed on keyboard.
+         *
+         * @param v - The textview mSearchView.
+         * @param actionId - The ID for the action event.
+         * @param event - The editor action event, pressing the enter key.
+         * @return - True if action was executed, false if not.
+         */
+        @Override
+        public boolean onEditorAction(TextView v, int actionId, KeyEvent event)
+        {
+            if ((event != null && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) || (actionId == EditorInfo.IME_ACTION_DONE))
+            {
+                Log.i("TAG", "Done Pressed");
+            }
+            return false;
+        }
+    };
 
     /**
      * Method to set up the custom viewpager view.
