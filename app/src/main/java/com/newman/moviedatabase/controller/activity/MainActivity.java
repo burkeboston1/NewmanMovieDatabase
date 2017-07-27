@@ -2,6 +2,7 @@ package com.newman.moviedatabase.controller.activity;
 
 import android.content.Context;
 import android.hardware.input.InputManager;
+import android.os.AsyncTask;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -24,6 +25,8 @@ import com.newman.moviedatabase.controller.customview.NoSwipeViewPager;
 import com.newman.moviedatabase.controller.fragment.BrowseFragment;
 import com.newman.moviedatabase.model.MovieTable;
 import com.newman.moviedatabase.R;
+
+import org.json.JSONObject;
 
 /**
  * Class controls main activity of application for browsing the movie database listings.
@@ -78,6 +81,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         mSearchButton = (ImageButton)findViewById(R.id.search_button);
     }
 
+//region SearchView Listeners
     /**
      * Listener hides keyboard when selection is made in the suggestions dropdown.
      */
@@ -99,8 +103,9 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
             {
                 InputMethodManager inputManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
                 inputManager.hideSoftInputFromWindow(v.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
-                Log.i("TAG", "Selection made");
+                Log.i("TAG", "Selection made: " + parent.getItemAtPosition(position));
             }
+
 
             /*
              * TODO: Start activity for the item that was selected by getting the text (movie title) at menu index 'position'
@@ -110,6 +115,29 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
              */
         }
     };
+
+    private class MovieDataTask extends AsyncTask<String, Void, JSONObject>
+    {
+        /**
+         * Thread routine for OMBb request to query movie data in background
+         * when dropdown suggestion is pressed.
+         *
+         * @param strings - The movie title to be used in the request.
+         * @return - The JSON response from the OMDb query.
+         */
+        @Override
+        protected JSONObject doInBackground(String... strings)
+        {
+            //TODO: Move data from OMDb.java private class to this shizzy right here
+        }
+
+        @Override
+        protected void onPostExecute(JSONObject movieData)
+        {
+            super.onPostExecute(movieData);
+            //Update UI here - start intent for new activity
+        }
+    }
 
     /**
      * Listener hides keyboard when enter/done is pressed on keyboard.
@@ -134,6 +162,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
             return false;
         }
     };
+//endregion
 
     /**
      * Method to set up the custom viewpager view.
