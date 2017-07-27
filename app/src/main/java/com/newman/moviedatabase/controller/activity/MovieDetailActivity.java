@@ -18,7 +18,8 @@ import org.json.JSONObject;
  */
 public class MovieDetailActivity extends AppCompatActivity
 {
-    private TextView mSimpleText;
+    private JSONObject mMovieData;
+    private TextView mTitle, mYear, mRating, mFullJSON;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -26,17 +27,49 @@ public class MovieDetailActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_detail);
 
-        JSONObject movieData = null;
         Intent intent = getIntent();
         try {
-            movieData = new JSONObject(intent.getStringExtra("MOVIE_DATA"));
+            mMovieData = new JSONObject(intent.getStringExtra("MOVIE_DATA"));
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        mSimpleText = (TextView)findViewById(R.id.simple_text);
-        if (movieData != null)
+
+        mTitle = (TextView)findViewById(R.id.title_value);
+        mYear = (TextView)findViewById(R.id.year_value);
+        mRating = (TextView)findViewById(R.id.rating_value);
+        mFullJSON = (TextView)findViewById(R.id.fulljson_value);
+
+        if (mMovieData.has("Error"))
         {
-            mSimpleText.setText(movieData.toString());
+            mTitle.setText("Error --> Movie doesn't exist!");
+            mYear.setText("Error --> Movie doesn't exist!");
+            mRating.setText("Error --> Movie doesn't exist!");
+        }
+        else
+        {
+            try {
+                mTitle.setText(mMovieData.getString("Title"));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                mYear.setText(mMovieData.getString("Year"));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                mRating.setText(mMovieData.getString("Rated"));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+        try {
+            mFullJSON.setText("\n" + mMovieData.toString(4));
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
     }
 }

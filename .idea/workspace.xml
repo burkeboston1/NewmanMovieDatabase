@@ -6,11 +6,18 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="TAG" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c00e632e-87c5-4acd-b6ba-7deed46edc72" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/model/cloud/Encoder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/controller/activity/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/controller/activity/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/controller/activity/MovieDetailActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/controller/activity/MovieDetailActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/controller/adapter/RecyclerViewAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/controller/adapter/RecyclerViewAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_movie_detail.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_movie_detail.xml" />
     </list>
     <ignored path="NewmanMovieDatabase.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,17 +74,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/controller/activity/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="723">
-              <caret line="130" column="84" selection-start-line="130" selection-start-column="84" selection-end-line="130" selection-end-column="84" />
+            <state relative-caret-position="492">
+              <caret line="173" column="27" selection-start-line="173" selection-start-column="27" selection-end-line="173" selection-end-column="28" />
               <folding>
-                <element signature="e#2777#4189#0" expanded="true" />
-                <element signature="e#4188#4189#0" expanded="true" />
-                <element signature="e#5105#5852#0" expanded="true" />
-                <element signature="e#5851#5852#0" expanded="true" />
+                <element signature="e#3153#4565#0" expanded="true" />
+                <element signature="e#4564#4565#0" expanded="true" />
+                <element signature="e#4842#4843#0" expanded="true" />
+                <element signature="e#4884#4885#0" expanded="true" />
+                <element signature="e#6683#7430#0" expanded="true" />
+                <element signature="e#7429#7430#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Encoder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/model/cloud/Encoder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="21" column="97" selection-start-line="21" selection-start-column="97" selection-end-line="21" selection-end-column="97" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider editor-type-id="android-manifest">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="4" column="63" selection-start-line="4" selection-start-column="63" selection-end-line="4" selection-end-column="63" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -85,8 +119,8 @@
       <file leaf-file-name="OMDb.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/model/cloud/OMDb.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="105" column="8" selection-start-line="105" selection-start-column="8" selection-end-line="107" selection-end-column="9" />
+            <state relative-caret-position="273">
+              <caret line="23" column="37" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -95,11 +129,11 @@
       <file leaf-file-name="RecyclerViewAdapter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/controller/adapter/RecyclerViewAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="617">
-              <caret line="78" column="11" selection-start-line="78" selection-start-column="11" selection-end-line="78" selection-end-column="11" />
+            <state relative-caret-position="492">
+              <caret line="74" column="89" selection-start-line="74" selection-start-column="89" selection-end-line="74" selection-end-column="89" />
               <folding>
-                <element signature="e#2135#2674#0" expanded="true" />
-                <element signature="e#2673#2674#0" expanded="true" />
+                <element signature="e#2232#2601#0" expanded="true" />
+                <element signature="e#2600#2601#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -112,6 +146,29 @@
               <caret line="25" column="148" selection-start-line="25" selection-start-column="148" selection-end-line="25" selection-end-column="148" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MovieDetailActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/controller/activity/MovieDetailActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="639">
+              <caret line="71" column="12" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_movie_detail.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_movie_detail.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="398">
+              <caret line="114" column="47" selection-start-line="114" selection-start-column="47" selection-end-line="114" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
           </provider>
         </entry>
       </file>
@@ -129,6 +186,13 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -1964,14 +2028,16 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_movie_detail.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/model/cloud/OMDb.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/controller/adapter/RecyclerViewAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/controller/activity/MovieDetailActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/model/MovieRecord.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/controller/fragment/BrowseFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/controller/activity/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/controller/adapter/RecyclerViewAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/model/cloud/Encoder.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_movie_detail.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/controller/activity/MovieDetailActivity.java" />
       </list>
     </option>
   </component>
@@ -2094,6 +2160,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NewmanMovieDatabase" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="moviedatabase" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="activity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2434,7 +2526,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.49785176" order="7" side_tool="false" content_ui="tabs" />
@@ -2442,8 +2534,8 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5021482" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39764705" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.68222225" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2539,25 +2631,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_movie_detail.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/controller/activity/MovieDetailActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="38" column="52" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/model/MovieRecord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1533">
@@ -2565,25 +2638,6 @@
           <folding>
             <element signature="e#2116#2117#0" expanded="false" />
             <element signature="e#2170#2171#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/controller/fragment/BrowseFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="25" column="148" selection-start-line="25" selection-start-column="148" selection-end-line="25" selection-end-column="148" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/controller/adapter/RecyclerViewAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="617">
-          <caret line="78" column="11" selection-start-line="78" selection-start-column="11" selection-end-line="78" selection-end-column="11" />
-          <folding>
-            <element signature="e#2135#2674#0" expanded="true" />
-            <element signature="e#2673#2674#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2598,22 +2652,94 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/model/cloud/OMDb.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="105" column="8" selection-start-line="105" selection-start-column="8" selection-end-line="107" selection-end-column="9" />
+        <state relative-caret-position="273">
+          <caret line="23" column="37" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/controller/activity/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
-          <caret line="130" column="84" selection-start-line="130" selection-start-column="84" selection-end-line="130" selection-end-column="84" />
+        <state relative-caret-position="492">
+          <caret line="173" column="27" selection-start-line="173" selection-start-column="27" selection-end-line="173" selection-end-column="28" />
           <folding>
-            <element signature="e#2777#4189#0" expanded="true" />
-            <element signature="e#4188#4189#0" expanded="true" />
-            <element signature="e#5105#5852#0" expanded="true" />
-            <element signature="e#5851#5852#0" expanded="true" />
+            <element signature="e#3153#4565#0" expanded="true" />
+            <element signature="e#4564#4565#0" expanded="true" />
+            <element signature="e#4842#4843#0" expanded="true" />
+            <element signature="e#4884#4885#0" expanded="true" />
+            <element signature="e#6683#7430#0" expanded="true" />
+            <element signature="e#7429#7430#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/model/cloud/Encoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="21" column="97" selection-start-line="21" selection-start-column="97" selection-end-line="21" selection-end-column="97" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="63" selection-start-line="4" selection-start-column="63" selection-end-line="4" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/controller/fragment/BrowseFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="25" column="148" selection-start-line="25" selection-start-column="148" selection-end-line="25" selection-end-column="148" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_movie_detail.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="114" column="47" selection-start-line="114" selection-start-column="47" selection-end-line="114" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/controller/adapter/RecyclerViewAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="74" column="89" selection-start-line="74" selection-start-column="89" selection-end-line="74" selection-end-column="89" />
+          <folding>
+            <element signature="e#2232#2601#0" expanded="true" />
+            <element signature="e#2600#2601#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-25/org/json/JSONObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="376" column="19" selection-start-line="376" selection-start-column="19" selection-end-line="376" selection-end-column="19" />
+          <folding>
+            <element signature="e#14385#14386#0" expanded="true" />
+            <element signature="e#14440#14441#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/newman/moviedatabase/controller/activity/MovieDetailActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="639">
+          <caret line="71" column="12" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>

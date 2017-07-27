@@ -3,12 +3,14 @@ package com.newman.moviedatabase.controller.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import com.newman.moviedatabase.R;
+import com.newman.moviedatabase.controller.activity.MainActivity;
 import com.newman.moviedatabase.controller.activity.MovieDetailActivity;
 import com.newman.moviedatabase.model.cloud.OMDb;
 import java.util.List;
@@ -61,7 +63,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder vh, int index)
+    public void onBindViewHolder(final ViewHolder vh, final int index)
     {
         vh.mBoundString = mValues.get(index);
         vh.mMovieTitle.setText(mValues.get(index));
@@ -69,12 +71,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             @Override
             public void onClick(View v)
             {
-                Context context = v.getContext();
-
-                //Pass movie data JSON as string to new activity, re-create as JSONObject in receiving activity
-                Intent intent = new Intent(context, MovieDetailActivity.class);
-                intent.putExtra("MOVIE_DATA", omdb.getMovieDataByTitle(vh.mMovieTitle.getText().toString()).toString());
-                context.startActivity(intent);
+                MainActivity.MovieDataTask task = new MainActivity.MovieDataTask(v.getContext());
+                Log.d("TAG", "The string passed into the asynctask: " + mValues.get(index));
+                task.execute(mValues.get(index));
             }
         });
     }

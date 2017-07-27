@@ -1,6 +1,7 @@
 package com.newman.moviedatabase.controller.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.input.InputManager;
 import android.os.AsyncTask;
 import android.support.design.widget.TabLayout;
@@ -25,8 +26,16 @@ import com.newman.moviedatabase.controller.customview.NoSwipeViewPager;
 import com.newman.moviedatabase.controller.fragment.BrowseFragment;
 import com.newman.moviedatabase.model.MovieTable;
 import com.newman.moviedatabase.R;
+import com.newman.moviedatabase.model.cloud.Encoder;
 
+import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.IOException;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 /**
  * Class controls main activity of application for browsing the movie database listings.
@@ -42,6 +51,9 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     private AutoCompleteTextView mSearchView;
     private ImageButton mSearchButton;
 
+    /** Holds the client entity that sends/receives requests */
+    private static OkHttpClient mHTTPClient;
+
 
     // Attributes
     MovieTable table;
@@ -56,6 +68,8 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         setupToolBar();
         setupNoSwipeViewPager();
         setupTabLayout();
+
+        mHTTPClient = new OkHttpClient();
 
         //table = new MovieTable();
 
@@ -116,8 +130,18 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         }
     };
 
-    private class MovieDataTask extends AsyncTask<String, Void, JSONObject>
+    /**
+     * Inner-class holds the handler for sending an HTTP request for movie data.
+     */
+    public static class MovieDataTask extends AsyncTask<String, Void, JSONObject>
     {
+        private Context mContext;
+
+        public MovieDataTask(Context context)
+        {
+            mContext = context;
+        }
+
         /**
          * Thread routine for OMBb request to query movie data in background
          * when dropdown suggestion is pressed.
@@ -128,14 +152,40 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         @Override
         protected JSONObject doInBackground(String... strings)
         {
-            //TODO: Move data from OMDb.java private class to this shizzy right here
+            return getMovieDataByTitle(strings[0]);
         }
 
         @Override
         protected void onPostExecute(JSONObject movieData)
         {
             super.onPostExecute(movieData);
-            //Update UI here - start intent for new activity
+            Intent intent = new Intent(mContext, MovieDetailActivity.class);
+            intent.putExtra("MOVIE_DATA", movieData.toString());
+            mContext.startActivity(intent);
+        }
+
+        /**
+         * Method to query the OMDb for the data associated with a movie title.
+         * @param movieTitle
+         */
+        private JSONObject getMovieDataByTitle(String movieTitle)
+        {
+            String endpoint = "http://www.omdbapi.com/?apiKey=96ad6a43&t=" + Encoder.URIEncode(movieTitle);
+            Request.Builder builder = new Request.Builder();
+            builder.url(endpoint);
+            builder.get();
+            Request request = builder.build();
+
+            Response response = null;
+            try {
+                response = mHTTPClient.newCall(request).execute();
+                JSONObject jsonResponse = new JSONObject(response.body().string());
+                return jsonResponse;
+            }catch (JSONException | IOException e) {
+                e.printStackTrace();
+            }
+
+            return null;
         }
     }
 
