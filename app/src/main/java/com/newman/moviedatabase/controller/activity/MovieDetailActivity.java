@@ -1,12 +1,14 @@
 package com.newman.moviedatabase.controller.activity;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.newman.moviedatabase.R;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -18,6 +20,10 @@ import org.json.JSONObject;
  */
 public class MovieDetailActivity extends AppCompatActivity
 {
+    private Toolbar mToolbar;
+    private CollapsingToolbarLayout mCollapsingLayout;
+    private ImageView mMoviePoster;
+
     private JSONObject mMovieData;
     private TextView mTitle, mYear, mRating, mFullJSON;
 
@@ -44,32 +50,6 @@ public class MovieDetailActivity extends AppCompatActivity
             mTitle.setText("Error --> Movie doesn't exist!");
             mYear.setText("Error --> Movie doesn't exist!");
             mRating.setText("Error --> Movie doesn't exist!");
-        }
-        else
-        {
-            try {
-                mTitle.setText(mMovieData.getString("Title"));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-            try {
-                mYear.setText(mMovieData.getString("Year"));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-            try {
-                mRating.setText(mMovieData.getString("Rated"));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-
-        try {
-            mFullJSON.setText("\n" + mMovieData.toString(4));
-        } catch (JSONException e) {
-            e.printStackTrace();
         }
     }
 }

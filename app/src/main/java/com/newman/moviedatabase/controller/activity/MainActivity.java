@@ -1,11 +1,13 @@
 package com.newman.moviedatabase.controller.activity;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.input.InputManager;
 import android.os.AsyncTask;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
@@ -136,6 +138,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     public static class MovieDataTask extends AsyncTask<String, Void, JSONObject>
     {
         private Context mContext;
+        private String mMovieTitle;
 
         public MovieDataTask(Context context)
         {
@@ -152,6 +155,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         @Override
         protected JSONObject doInBackground(String... strings)
         {
+            mMovieTitle = strings[0];
             return getMovieDataByTitle(strings[0]);
         }
 
@@ -159,9 +163,19 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         protected void onPostExecute(JSONObject movieData)
         {
             super.onPostExecute(movieData);
-            Intent intent = new Intent(mContext, MovieDetailActivity.class);
-            intent.putExtra("MOVIE_DATA", movieData.toString());
-            mContext.startActivity(intent);
+            if (movieData.has("Error"))
+            {
+                AlertDialog.Builder errDialogBuilder = new AlertDialog.Builder(mContext, R.style.ErrorDialogTheme);
+                errDialogBuilder.setTitle("Error!");
+                errDialogBuilder.setMessage("Could not find \"" + mMovieTitle + "\"");
+                errDialogBuilder.show();
+            }
+            else
+            {
+                Intent intent = new Intent(mContext, MovieDetailActivity.class);
+                intent.putExtra("MOVIE_DATA", movieData.toString());
+                mContext.startActivity(intent);
+            }
         }
 
         /**
