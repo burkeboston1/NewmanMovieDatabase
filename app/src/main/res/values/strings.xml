@@ -10,6 +10,9 @@
     </string>
     <string name="noResultsString">No results found.</string>
     <string name="searchErrorString">Try "First Last" or "First Middle Last"</string>
+
+    <!-- ImageView Content Descriptions -->
+    <string name="poster_backdrop_details">Poster for movie</string>
 </resources>
 
 

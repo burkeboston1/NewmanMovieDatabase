@@ -159,6 +159,11 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
             return getMovieDataByTitle(strings[0]);
         }
 
+        /**
+         * Method called to update UI after background thread completes execution.
+         *
+         * @param movieData - Response from API call in background thread.
+         */
         @Override
         protected void onPostExecute(JSONObject movieData)
         {
@@ -180,7 +185,8 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
         /**
          * Method to query the OMDb for the data associated with a movie title.
-         * @param movieTitle
+         *
+         * @param movieTitle - The name of the movie to query data for.
          */
         private JSONObject getMovieDataByTitle(String movieTitle)
         {
@@ -193,8 +199,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
             Response response = null;
             try {
                 response = mHTTPClient.newCall(request).execute();
-                JSONObject jsonResponse = new JSONObject(response.body().string());
-                return jsonResponse;
+                return new JSONObject(response.body().string());
             }catch (JSONException | IOException e) {
                 e.printStackTrace();
             }

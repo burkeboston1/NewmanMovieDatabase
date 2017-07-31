@@ -10,6 +10,7 @@
 
     <style name="ErrorDialogTheme" parent="Theme.AppCompat.Dialog.Alert">
         <item name="android:background">@color/accent</item>
+        <item name="android:gravity">center</item>
     </style>
 
 </resources>
