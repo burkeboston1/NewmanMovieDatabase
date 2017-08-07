@@ -11,17 +11,19 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.newman.moviedatabase.R;
-import com.newman.moviedatabase.controller.adapter.RecyclerViewAdapter;
+import com.newman.moviedatabase.controller.adapter.RecyclerItemAdapter;
+import com.newman.moviedatabase.model.MovieRecord;
 
 import android.support.v7.widget.DividerItemDecoration;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class BrowseFragment extends Fragment
 {
+    final static String MOVIE_KEY = "MOVIE_LIST";
+
     final String[] strs = {
             "The Departed", "Scary Movie 3", "Metropolis", "12 Angry Men", "Inception", "Se7en", "Toy Story", "Whiplash", "The Matrix", "The Shining",
             "Harry Potter and the Deathly Hallows: Part 2", "Movie Title #12", "Movie Title #13", "Movie Title #14", "Movie Title #15", "Movie Title #16", "Movie Title #17", "Movie Title #18", "Movie Title #19", "Movie Title #20",
@@ -45,13 +47,33 @@ public class BrowseFragment extends Fragment
             "Movie Title #191", "Movie Title #192", "Movie Title #193", "Movie Title #194", "Movie Title #195", "Movie Title #196", "Movie Title #197", "Movie Title #198", "Movie Title #199", "Movie Title #200"};
     private LinearLayout mBaseLayout;
     private RecyclerView mRecyclerView;
+    private ArrayList<MovieRecord> mMovieList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         mBaseLayout = (LinearLayout)inflater.inflate(R.layout.fragment_browse, container, false);
+
+        Bundle args = getArguments();
+        mMovieList = (ArrayList<MovieRecord>)args.getSerializable(MOVIE_KEY);
+
         setupRecyclerView();
         return mBaseLayout;
+    }
+
+    /**
+     * Method to create an instance of this fragment with a list
+     *
+     * @param movies
+     * @return
+     */
+    public static BrowseFragment newInstance(ArrayList<MovieRecord> movies)
+    {
+        BrowseFragment bf = new BrowseFragment();
+        Bundle args = new Bundle();
+        args.putSerializable(MOVIE_KEY, movies);
+        bf.setArguments(args);
+        return bf;
     }
 
     /**
@@ -61,7 +83,9 @@ public class BrowseFragment extends Fragment
     {
         mRecyclerView = (RecyclerView)mBaseLayout.findViewById(R.id.recyclerview);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mRecyclerView.getContext()));
-        mRecyclerView.setAdapter(new RecyclerViewAdapter(getActivity(), new ArrayList<>(Arrays.asList(strs))));
+        //mRecyclerView.setAdapter(new RecyclerViewAdapter(getActivity(), new ArrayList<>(Arrays.asList(strs))));
+        mRecyclerView.setAdapter(new RecyclerItemAdapter(getActivity(), R.layout.recycler_list_item, mMovieList));
+
         mRecyclerView.addItemDecoration(new DividerItemDecoration(mRecyclerView.getContext(), DividerItemDecoration.VERTICAL));
     }
 }

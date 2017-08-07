@@ -1,16 +1,14 @@
 package com.newman.moviedatabase.controller.activity;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.hardware.input.InputManager;
+import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -22,19 +20,17 @@ import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
 import com.newman.moviedatabase.controller.adapter.ViewPagerAdapter;
 import com.newman.moviedatabase.controller.customview.NoSwipeViewPager;
 import com.newman.moviedatabase.controller.fragment.BrowseFragment;
+import com.newman.moviedatabase.model.MovieRecord;
 import com.newman.moviedatabase.model.MovieTable;
 import com.newman.moviedatabase.R;
 import com.newman.moviedatabase.model.cloud.Encoder;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.IOException;
-
+import java.util.ArrayList;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -53,6 +49,8 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     private AutoCompleteTextView mSearchView;
     private ImageButton mSearchButton;
 
+    public Bitmap mPlaceholder;
+
     /** Holds the client entity that sends/receives requests */
     private static OkHttpClient mHTTPClient;
 
@@ -67,8 +65,10 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ArrayList<MovieRecord> movies = new ArrayList<>();
+
         setupToolBar();
-        setupNoSwipeViewPager();
+        setupNoSwipeViewPager(movies);
         setupTabLayout();
 
         mHTTPClient = new OkHttpClient();
@@ -235,21 +235,23 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
     /**
      * Method to set up the custom viewpager view.
+     *
+     * @param movies - The list of movies to be used in the fragments.
      */
-    private void setupNoSwipeViewPager()
+    private void setupNoSwipeViewPager(ArrayList<MovieRecord> movies)
     {
         mViewPager = (NoSwipeViewPager)findViewById(R.id.viewpager);
         if (mViewPager != null)
         {
             ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
-            BrowseFragment aToZ = new BrowseFragment();
+            BrowseFragment aToZ = BrowseFragment.newInstance(movies);
             adapter.addFragment(aToZ, "A-Z");
 
-            BrowseFragment rand = new BrowseFragment();
+            BrowseFragment rand = BrowseFragment.newInstance(movies);
             adapter.addFragment(rand, "Random");
 
-            BrowseFragment thirdExample = new BrowseFragment();
+            BrowseFragment thirdExample = BrowseFragment.newInstance(movies);
             adapter.addFragment(thirdExample, "Example Tab");
 
             mViewPager.setAdapter(adapter);

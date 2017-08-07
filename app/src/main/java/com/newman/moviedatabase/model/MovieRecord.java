@@ -16,6 +16,9 @@ public class MovieRecord {
     private String Title;
     private String AddAuthor;
     private String Subject;
+    private String Year;
+    private String PosterURL;
+
 
     private ArrayList<String> keywords;
 
@@ -73,6 +76,8 @@ public class MovieRecord {
     public String getTitle(){
         return Title;
     }
+    public String getYear() { return Year; }
+    public String getPosterURL() { return PosterURL; }
 
     /* Equals */
     @Override
