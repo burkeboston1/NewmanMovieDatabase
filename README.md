@@ -1,8 +1,7 @@
 Newman Movie Database
 =====================
 
-A database of movies available to rent from Newman Library at Virginia Tech.
-This application serves to replace the printed catalog used to look up call numbers for movies rentable at the Virginia Tech Library.
+An Android application that connects Newman Library's database of rentable DVDs with the [Open Movie Database API](http://www.omdbapi.com/). 
 
 ## Table of Contents
  * [What's New](#what's-new)
@@ -14,15 +13,27 @@ This application serves to replace the printed catalog used to look up call numb
 
 What's New
 -----------
-Bullet points of recent shcnges here
+Version 1.0 (pending)
+  * Search: users can search for titles, actors, directors, etc. and get a list of matching movies. 
+  * Movie Details: OMDB provides extra details (plot, poster, etc.) about movies that Newman doesn't store.
 
 Background
 -----------
-Some info on what the app is replacing and why it will be useful
+In the summer of 2016, I (Boston) had no access to the internet. 
+To supplement Netflix, I started checking out movies from Newman Library at Virginia Tech where I am a student. 
+There were two ways to look for movies:
+  1. Use the library's Windows '95 computer to search the database online. 
+  2. Flip through the hardcopy of the database, which was a giant white binder sitting on top of the stacks. This was quicker. 
+  
+So we created NMDB, which hopefully will run on an Android tablet where that old binder used to be. 
 
 Performance
 ------------
-Backend design thought process, specs on performance, data structures used and algorithmic complexities
+The Newman IT guys gave me a dump of their database in an Excel file. It is ugly. Regardless, it contains lots of cool
+info about each record including a very ugly title, call number (which patrons need to locate the movie on the shelf), 
+and a jumbled mess of directors, actors, production companies, and miscelleneous stuff. 
+
+The search feature searches Newman's records, but gives the user all the data obtained from an OMDB API call. 
 
 Design
 -------
