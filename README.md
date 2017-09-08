@@ -3,6 +3,8 @@ Newman Movie Database
 
 An Android application that connects Newman Library's database of rentable DVDs with the [Open Movie Database API](http://www.omdbapi.com/). 
 
+Created by Boston Burke and Tom Evans
+
 ## Table of Contents
  * [What's New](#what's-new)
  * [Background](#Background)
