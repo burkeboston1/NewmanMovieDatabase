@@ -27,24 +27,12 @@ There were two ways to look for movies:
   1. Use the library's Windows '95 computer to search the database online. 
   2. Flip through the hardcopy of the database, which was a giant white binder sitting on top of the stacks. This was quicker. 
   
-So we created NMDB, which hopefully will run on an Android tablet where that old binder used to be. 
+So we created NMDB, which is designed to run on an Android tablet where that old binder used to be. 
 
 Performance
 ------------
 The Newman IT guys gave me a dump of their database in an Excel file. It is ugly. Regardless, it contains lots of cool
-info about each record including a very ugly title, call number (which patrons need to locate the movie on the shelf), 
-and a jumbled mess of directors, actors, production companies, and miscelleneous stuff. 
+info about each record including a title, call number (used to locate the movie on the shelf), and miscellaneous data about directors, actors, and production companies. 
 
 The search feature searches Newman's records, but gives the user all the data obtained from an OMDB API call. 
 
-Design
--------
-UI/UX design, colors, controller software design, design patterns used
-
-Screenshots
-------------
-Screenshots of the app's screens/orientations
-
-Wireframes
------------
-Screenshots of the wireframe drawings made in the early planning stages of the app
